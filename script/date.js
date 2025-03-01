@@ -18,3 +18,5 @@ document.getElementById("current-date").innerHTML = `
   ${weekday}, <br>
   <span class="font-bold">${month} ${day},  ${year}</span>
 `;
+
+document.querySelector

@@ -44,3 +44,12 @@ for(let btn of button){
 
     })
 }
+
+// Discover new today box
+document.getElementById("discover").addEventListener("click", function(){
+    window.location.href = './blogs.html';
+})
+
+document.getElementById("back-desk").addEventListener("click", function(){
+    window.location.href = './index.html'
+})
