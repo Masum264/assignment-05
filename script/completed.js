@@ -7,9 +7,10 @@ let taskConverted = parseInt(taskChecked);
 
 for(let btn of button){
     btn.addEventListener("click", function(event){
+        
+        event.preventDefault();
         alert("Board updated successfully!");
        
-        event.preventDefault();
         btn.setAttribute("disabled", true);
         btn.style.backgroundColor = "lightgray";
         btn.style.color = "gray";
@@ -22,5 +23,24 @@ for(let btn of button){
         }
         document.getElementById("task-count").innerText = countConverted;
         document.getElementById("task-checked").innerText = taskConverted;
+
+        const parentDiv = btn.parentElement.parentElement;
+        const title = parentDiv.querySelector("h1").innerText;
+
+
+        const newElement = document.createElement("p");
+        newElement.innerText = `You have completed the task ${title} at ${time}`;
+
+        newElement.classList.add("bg-[#F4F7FF]", "p-4", "rounded-xl", "m-2")
+
+        const activitySection = document.getElementById("activity-section");
+        activitySection.appendChild(newElement);
+
+        document.getElementById("clear-history").addEventListener("click", function(){
+            newElement.style.display = "none";
+        })
+
+        
+
     })
 }
