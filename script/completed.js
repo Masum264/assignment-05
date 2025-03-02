@@ -9,7 +9,7 @@ for(let btn of button){
     btn.addEventListener("click", function(event){
         
         event.preventDefault();
-        alert("Board updated successfully!");
+        alert("Board updated successfully");
        
         btn.setAttribute("disabled", true);
         btn.style.backgroundColor = "lightgray";
